@@ -1,4 +1,4 @@
-var gulp       = require('gulp'),
+var gulp         = require('gulp'),
 	sass         = require('gulp-sass'),
 	browserSync  = require('browser-sync'),
 	concat       = require('gulp-concat'),
@@ -31,6 +31,12 @@ gulp.task('browser-sync', function() {
 gulp.task('scripts', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
+		'app/libs/imagesloaded.pkgd.min.js',
+		'app/libs/TweenMax.min.js',
+		'app/libs/ScrollMagic.min.js',
+		'app/libs/animation.gsap.min.js',
+		'app/libs/debug.addIndicators.min.js',
+		'app/libs/jquery.ScrollMagic.min.js',
 		'app/libs/magnific-popup/dist/jquery.magnific-popup.min.js'
 		])
 		.pipe(concat('libs.min.js'))
@@ -69,8 +75,7 @@ gulp.task('img', function() {
 gulp.task('build', ['clean', 'img', 'sass', 'scripts'], function() {
 
 	var buildCss = gulp.src([
-		'app/css/main.css',
-		'app/css/libs.min.css'
+		'app/css/*.css'
 		])
 	.pipe(gulp.dest('dist/css'))
 
