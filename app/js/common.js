@@ -13,7 +13,7 @@ $('#main_animation-hide').imagesLoaded()
     var countLoadedImages = $('#main_animation-hide img.loaded').size();
 
     var width = new Number(100 * (countLoadedImages / countImages));
-    width = width.toFixed(2) + '%';
+    width = width.toFixed() + '%';
 
     // $('#progress-bar > #progress').css({
     //   'width' : width
